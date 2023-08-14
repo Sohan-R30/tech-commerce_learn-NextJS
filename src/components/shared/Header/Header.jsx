@@ -5,6 +5,7 @@ import logo from "@/../public/logo.png"
 import userImg from "@/../public/user.png"
 import { PiShoppingCartSimpleBold } from "react-icons/pi"
 import { useState } from "react";
+import SearchProducts from "@/components/SearchProducts/SearchProducts";
 
 
 const Header = () => {
@@ -20,9 +21,8 @@ const Header = () => {
                     <p className="textStrock">Commerce </p>
                 </div>
             </Link>
-            <div className="w-full flex">
-                <input className="inputStyle rounded-s-md" type="search" name="searchProduct" id="searchProduct" placeholder="Search Product" />
-                <button className="buttonStyle bg-primaryColor rounded-e-md hover:text-xs">Search</button>
+            <div className="w-full flex relative">
+               <SearchProducts/>
             </div>
             <div className=" place-content-end flex gap-10 items-center h-5">
                 <div>

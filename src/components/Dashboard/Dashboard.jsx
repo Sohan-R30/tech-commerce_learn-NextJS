@@ -22,6 +22,14 @@ const Dashboard = () => {
                                 <button className="buttonStyle bg-rose-500 rounded-md">See History</button>
                             </div>
                         </div>
+                        <Link href="/">
+                        <div className="w-[400px] h-[200px] bg-[#afe7a5] rounded-md flex justify-center items-center text-center shadow-md group hover:bg-[#95d48a] hover:transition-all">
+                            <div>
+                                <h3 className="mb-4 text-2xl uppercase font-bold text-rose-500 group-hover:text-rose-800">Go To Home page</h3>
+                                <button className="buttonStyle bg-rose-500 rounded-md">Home Page</button>
+                            </div>
+                        </div>
+                        </Link>
                     </div>
                 )
             }
@@ -44,6 +52,14 @@ const Dashboard = () => {
                             </div>
                         </div>
                         </Link>
+                        <Link href="/">
+                        <div className="w-[400px] h-[200px] bg-[#afe7a5] rounded-md flex justify-center items-center text-center shadow-md group hover:bg-[#95d48a] hover:transition-all">
+                            <div>
+                                <h3 className="mb-4 text-2xl uppercase font-bold text-rose-500 group-hover:text-rose-800">Go To Home page</h3>
+                                <button className="buttonStyle bg-rose-500 rounded-md">Home Page</button>
+                            </div>
+                        </div>
+                        </Link>
                     </div>
                 )
             }
@@ -62,6 +78,14 @@ const Dashboard = () => {
                                 <button className="buttonStyle bg-rose-500 rounded-md">See Products</button>
                             </div>
                         </div>
+                        <Link href="/">
+                        <div className="w-[400px] h-[200px] bg-[#afe7a5] rounded-md flex justify-center items-center text-center shadow-md group hover:bg-[#95d48a] hover:transition-all">
+                            <div>
+                                <h3 className="mb-4 text-2xl uppercase font-bold text-rose-500 group-hover:text-rose-800">Go To Home page</h3>
+                                <button className="buttonStyle bg-rose-500 rounded-md">Home Page</button>
+                            </div>
+                        </div>
+                        </Link>
                     </div>
                 )
             }

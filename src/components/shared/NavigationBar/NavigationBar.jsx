@@ -9,7 +9,7 @@ const NavigationBar = () => {
         },
         {
             value: "watch",
-            nav: "Phone"
+            nav: "watch"
         },
         {
             value: "laptop",
