@@ -1,9 +1,14 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/../public/logo.png"
-import {PiShoppingCartSimpleBold} from "react-icons/pi"
+import userImg from "@/../public/user.png"
+import { PiShoppingCartSimpleBold } from "react-icons/pi"
+import { useState } from "react";
+
 
 const Header = () => {
+    const [user, setUser] = useState(false);
     return (
         <div className="py-8 grid grid-cols-3  gap-4 place-content-around items-center">
             <Link href="/">
@@ -16,19 +21,32 @@ const Header = () => {
                 </div>
             </Link>
             <div className="w-full flex">
-               <input className="inputStyle rounded-s-md" type="search" name="searchProduct" id="searchProduct" placeholder="Search Product" />
-               <button className="buttonStyle bg-primaryColor rounded-e-md hover:text-xs">Search</button>
+                <input className="inputStyle rounded-s-md" type="search" name="searchProduct" id="searchProduct" placeholder="Search Product" />
+                <button className="buttonStyle bg-primaryColor rounded-e-md hover:text-xs">Search</button>
             </div>
             <div className=" place-content-end flex gap-10 items-center h-5">
                 <div>
-                <Link href="/cart">
-                    <p className="text-3xl "><PiShoppingCartSimpleBold /></p>
-                </Link>
+                    <Link href="/cart">
+                        <p className="text-3xl "><PiShoppingCartSimpleBold /></p>
+                    </Link>
                 </div>
                 <div>
-                    <Link href="/login">
-                        <button className="buttonStyle rounded-md  bg-primaryColor hover:bg-[#0065a3] w-20 hover:text-sm">Login</button>
-                    </Link>
+
+                    {
+                        user ? (
+                            <div className="flex items-center gap-3">
+                                <Image src={userImg} height={30} width={45} alt="user image" />
+                                <button className="buttonStyle rounded-md  bg-primaryColor hover:bg-[#0065a3] w-24 hover:text-sm">Log Out</button>
+                            </div>
+                        ) : (
+                            <div className="flex items-center gap-3">
+                                <Image src={userImg} height={30} width={45} alt="user image" />
+                                <Link href="/login">
+                                    <button className="buttonStyle rounded-md  bg-primaryColor hover:bg-[#0065a3] w-20 hover:text-sm">Login</button>
+                                </Link>
+                            </div>
+                        )
+                    }
                 </div>
             </div>
         </div>
