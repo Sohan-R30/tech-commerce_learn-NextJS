@@ -1,13 +1,21 @@
 "use client"
 import Lottie from "lottie-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import {AiOutlineEye, AiOutlineEyeInvisible} from "react-icons/ai"
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
+import { FcGoogle } from "react-icons/fc"
 import loginJson from "@/../public/login.json"
+import { AuthContext } from "@/context/Authprovider";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
+import axios from "axios";
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false)
+    const { emailPasswordSignIn, users, googleSignIn } = useContext(AuthContext)
+    const [loginError, setLoginError] = useState('')
+    const router = useRouter();
 
     const {
         register,
@@ -16,7 +24,60 @@ const Login = () => {
         formState: { errors },
     } = useForm()
 
-    const onSubmit = (data) => console.log(data)
+    const handleGoogleLogin = () => {
+        googleSignIn()
+            .then((result) => {
+                const user = {
+                    displayName: result?.user?.displayName,
+                    email: result?.user?.email,
+                    emailVerified: result?.user?.emailVerified,
+                    uid: result?.user?.uid,
+                    photoURL: result?.user?.photoURL,
+                }
+                axios.put(`${process.env.NEXT_PUBLIC_API_URL}/api/users/${result?.user?.email}`, user)
+                    .then(() => {
+                        setLoginError("")
+                        router.push("/", { replace: true })
+                    }).catch((error) => {
+                        console.log(error)
+                        setLoginError(error.message)
+                    })
+            })
+            .catch((error) => {
+                console.log(error)
+                setLoginError(error.message)
+            })
+    }
+
+    const onSubmit = (data) => {
+        emailPasswordSignIn(data.email, data.password)
+            .then((result) => {
+                const user = {
+                    displayName: result?.user?.displayName,
+                    email: result?.user?.email,
+                    emailVerified: result?.user?.emailVerified,
+                    uid: result?.user?.uid,
+                    photoURL: result?.user?.photoURL,
+                }
+                axios.put(`${process.env.NEXT_PUBLIC_API_URL}/api/users/${result?.user?.email}`, user)
+                    .then(() => {
+                        setLoginError("")
+                        router.push("/", { replace: true })
+                    }).catch((error) => {
+                        console.log(error)
+                        setLoginError(error.message)
+                    })
+            })
+            .catch((error) => {
+                setLoginError(error.message)
+                console.log(error)
+            })
+    }
+
+
+    if (users) {
+        return router.push("/", { replace: true })
+    };
 
     return (
         <div className="grid grid-cols-2 place-items-center">
@@ -50,11 +111,18 @@ const Login = () => {
                         <input id="password" type={`${showPassword ? "text" : "password"}`} placeholder="Enter Your Password" {...register("password", { required: true, pattern: /^(?=.*[0-9])(?=.*[!@#$%^&*])(.{6,})$/ })} className="inputStyle rounded-md" />
                         {errors.password && <span className="text-sm text-red-600 absolute right-0 -top-5">Enter your Password Properly.</span>}
                     </div>
+                    <div className="my-2">
+                        <p className="text-sm text-red-600 text-center">{loginError}</p>
+                    </div>
 
                     <input type="submit" value="Login" className="buttonStyle bg-primaryColor rounded-md w-full py-2 cursor-pointer" />
                 </form>
                 <div className="my-3">
                     <p>Have no account ? <Link href="/registration" className="text-primaryColor">Please Registration</Link></p>
+                </div>
+
+                <div>
+                    <button onClick={handleGoogleLogin} className="border justify-center hover:bg-gray-100 transition-colors delay-100 duration-500  rounded-md w-full py-2 cursor-pointer flex items-center gap-3"><span className="text-2xl"><FcGoogle /></span> Login with Google</button>
                 </div>
             </div>
         </div>

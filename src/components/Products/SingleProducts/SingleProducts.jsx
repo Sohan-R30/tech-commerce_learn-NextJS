@@ -6,7 +6,6 @@ import Image from "next/image";
 
 const SingleProducts = async ({productId}) => {
     const singleProducts = await getsingleProducts(productId);
-    console.log("🚀 ~ file: SingleProducts.jsx:9 ~ SingleProducts ~ singleProducts:", singleProducts)
     if(singleProducts?.error){
         throw Error("Product Not Find")
     }

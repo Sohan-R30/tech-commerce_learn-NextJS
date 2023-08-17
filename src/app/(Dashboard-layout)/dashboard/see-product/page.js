@@ -3,7 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "@/../public/logo.png"
 
-
+export const metadata = {
+    title: 'See Product | Dashboard | Tech Commerce',
+    description: 'tech commerce dashboard for showing product for employee',
+  }
 const SeeProductPage = () => {
     return (
         <div className="mt-20">

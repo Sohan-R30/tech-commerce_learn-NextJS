@@ -5,9 +5,7 @@ import { toast } from "react-toastify";
 
 const DifferentSort = () => {
     const [selectedPrice, setSelectedPrice] = useState("ascending")
-    console.log("🚀 ~ file: DifferentSort.jsx:7 ~ DifferentSort ~ selectedPrice:", selectedPrice)
     const [selectedRatings, setSelectedRatings] = useState("descending")
-    console.log("🚀 ~ file: DifferentSort.jsx:9 ~ DifferentSort ~ selectedRatings:", selectedRatings)
     // setSelectedPrice(e.target.value)
     // setSelectedRatings(e.target.value)
     return (

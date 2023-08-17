@@ -4,6 +4,12 @@ import Link from "next/link";
 import logo from "@/../public/logo.png"
 import AddProduct from "@/components/Dashboard/Employee/AddProduct/AddProduct";
 
+export const metadata = {
+    title: 'Add Product | Dashboard | Tech Commerce',
+    description: 'tech commerce dashboard for adding product by employee',
+  }
+  
+
 const addProductPage = () => {
     return (
         <div className="mt-20">

@@ -14,10 +14,9 @@ const SearchProducts = () => {
         const search = await getsearchProducts(searchText);
         setSearchProducts(search)
     }
-    console.log("🚀 ~ file: SearchProducts.jsx:7 ~ SearchProducts ~ searchProducts:", searchProducts)
     return (
         <>
-            <input onChange={(e) => setSearchText(e.target.value)} className="inputStyle rounded-s-md" type="search" name="searchProduct" id="searchProduct" placeholder="Search Product" />
+            <input  onChange={(e) => setSearchText(e.target.value)} className="inputStyle rounded-s-md" type="search" name="searchProduct" id="searchProduct" placeholder="Search Product" />
             <button onClick={handleSearch} className="buttonStyle bg-primaryColor rounded-e-md hover:text-xs">Search</button>
 
             <div onBlur={() => setSearchProducts([])} className={`absolute top-52 sm:top-44 md:top-36 lg:top-28 xl:top-20 bg-[#fff] z-50 rounded-md shadow-2xl`}>

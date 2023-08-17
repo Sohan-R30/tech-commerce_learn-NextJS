@@ -11,7 +11,7 @@ const productsCollection = db.collection("products");
 
 
 export const GET = async (req,) => {
-    const searchText = req.nextUrl.searchParams.get("searchText");;
+    const searchText = req.nextUrl.searchParams.get("searchText");
     const regexSearch = { $regex: searchText, $options: 'i', };
     const search = {
         $or: [
