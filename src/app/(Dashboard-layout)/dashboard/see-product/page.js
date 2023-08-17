@@ -2,6 +2,7 @@ import GotoDashboard from "@/components/Dashboard/GotoDashboard";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/../public/logo.png"
+import SeeProduct from "@/components/Dashboard/Employee/SeeProduct/SeeProduct";
 
 export const metadata = {
     title: 'See Product | Dashboard | Tech Commerce',
@@ -21,6 +22,9 @@ const SeeProductPage = () => {
                     </div>
                 </Link>
                 <GotoDashboard />
+            </div>
+            <div>
+                <SeeProduct/>
             </div>
         </div>
     );

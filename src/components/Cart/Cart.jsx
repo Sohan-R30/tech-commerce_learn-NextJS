@@ -54,7 +54,7 @@ const Cart = () => {
                                     <tr className="flex flex-col md:table-row">
                                         <th className="border py-2"></th>
                                         <th className="border py-2"></th>
-                                        <th className="border py-2"><Link href={`/detailsProduct/${singleProducts?._id}`}><button className="px-2 py-1 bg-primaryColor text-white rounded-md">View Details</button></Link></th>
+                                        <th className="border py-2"><Link href={`/products/${singleProducts?._id}`}><button className="px-2 py-1 bg-primaryColor text-white rounded-md">View Details</button></Link></th>
                                         <th className="border py-2">
                                             <Link href={`/user/dashboard/payment/${singleProducts?._id}`}>
                                                 <button className="px-2 py-1 bg-orange-400 text-white rounded-md">Buy Now</button>

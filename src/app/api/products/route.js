@@ -28,3 +28,16 @@ export const GET = async (req) => {
         return NextResponse.json({ message: 'An error occurred while fetching data.' });
     }
 }
+
+
+export const POST = async (req) => {
+    const product = await req.json();
+    try {
+        const result = await productsCollection.insertOne(product);
+        return NextResponse.json({result})
+        
+    } catch (error) {
+        return NextResponse.json({ error: true, message: error.message });
+    }
+
+}
