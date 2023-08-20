@@ -54,7 +54,7 @@ const Dashboard = () => {
                                 {
                                     loggedUser && loggedUser?.role === "employee" && (
                                         <div className="flex gap-10 flex-wrap justify-center mt-10">
-                                            <Link href="dashboard/add-product">
+                                            <Link href="/dashboard/add-product">
                                                 <div className="w-[400px] h-[200px] bg-[#e7ccfb] rounded-md flex justify-center items-center text-center shadow-md group hover:bg-[#c689eb] hover:transition-all">
                                                     <div>
                                                         <h3 className="mb-4 text-2xl uppercase font-bold text-rose-500 group-hover:text-rose-800">Add Your Product</h3>
@@ -62,7 +62,7 @@ const Dashboard = () => {
                                                     </div>
                                                 </div>
                                             </Link>
-                                            <Link href="dashboard/see-product">
+                                            <Link href="/dashboard/see-product">
                                                 <div className="w-[400px] h-[200px] bg-[#ccebfb] rounded-md flex justify-center items-center text-center shadow-md group hover:bg-[#8ad8f3] hover:transition-all">
                                                     <div>
                                                         <h3 className="mb-4 text-2xl uppercase font-bold text-rose-500 group-hover:text-rose-800">See Your Products</h3>
@@ -84,18 +84,23 @@ const Dashboard = () => {
                                 {
                                     loggedUser && loggedUser?.role === "admin" && (
                                         <div className="flex gap-10 flex-wrap justify-center mt-10">
-                                            <div className="w-[400px] h-[200px] bg-[#e7fbcc] rounded-md flex justify-center items-center text-center shadow-md group hover:bg-[#c2e695] hover:transition-all">
-                                                <div>
-                                                    <h3 className="mb-4 text-2xl uppercase font-bold text-rose-500 group-hover:text-rose-800">Manage All Users</h3>
-                                                    <button className="buttonStyle bg-rose-500 rounded-md">See Users</button>
+                                            <Link href="/dashboard/manage-users" >
+
+                                                <div className="w-[400px] h-[200px] bg-[#e7fbcc] rounded-md flex justify-center items-center text-center shadow-md group hover:bg-[#c2e695] hover:transition-all">
+                                                    <div>
+                                                        <h3 className="mb-4 text-2xl uppercase font-bold text-rose-500 group-hover:text-rose-800">Manage All Users</h3>
+                                                        <button className="buttonStyle bg-rose-500 rounded-md">See Users</button>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div className="w-[400px] h-[200px] bg-[#fbcccc] rounded-md flex justify-center items-center text-center shadow-md group hover:bg-[#ecacac] hover:transition-all">
-                                                <div>
-                                                    <h3 className="mb-4 text-2xl uppercase font-bold text-rose-500 group-hover:text-rose-800">Manage All Products</h3>
-                                                    <button className="buttonStyle bg-rose-500 rounded-md">See Products</button>
+                                            </Link>
+                                            <Link href="/dashboard/manage-products" >
+                                                <div className="w-[400px] h-[200px] bg-[#fbcccc] rounded-md flex justify-center items-center text-center shadow-md group hover:bg-[#ecacac] hover:transition-all">
+                                                    <div>
+                                                        <h3 className="mb-4 text-2xl uppercase font-bold text-rose-500 group-hover:text-rose-800">Manage All Products</h3>
+                                                        <button className="buttonStyle bg-rose-500 rounded-md">See Products</button>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </Link>
                                             <Link href="/">
                                                 <div className="w-[400px] h-[200px] bg-[#afe7a5] rounded-md flex justify-center items-center text-center shadow-md group hover:bg-[#95d48a] hover:transition-all">
                                                     <div>

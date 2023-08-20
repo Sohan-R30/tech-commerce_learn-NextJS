@@ -1,5 +1,8 @@
 import Dashboard from "@/components/Dashboard/Dashboard";
 
+export const metadata = {
+    title: 'Dashboard | Tech Commerce',
+  }
 
 // TODO: DYNAMIC METADATA DASHBOARD USER
 

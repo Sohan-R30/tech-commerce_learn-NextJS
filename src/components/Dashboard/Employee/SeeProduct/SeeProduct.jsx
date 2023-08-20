@@ -2,7 +2,6 @@
 import { AuthContext } from '@/context/Authprovider';
 import axios from 'axios';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useContext, useEffect, useState } from 'react';
 import { AiFillStar } from 'react-icons/ai';
 
@@ -24,7 +23,6 @@ const SeeProduct = () => {
                 })
         }
     }, [users, userLoading])
-    console.log("🚀 ~ file: SeeProduct.jsx:11 ~ SeeProduct ~ employeeProducts:", employeeProducts)
 
     return (
         <div>
