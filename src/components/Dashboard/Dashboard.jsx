@@ -8,7 +8,6 @@ import Image from "next/image";
 
 const Dashboard = () => {
     const [loggedUser, logUserLoading] = useUsers();
-
     const { users, userLoading } = useContext(AuthContext);
 
     return (

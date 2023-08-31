@@ -1,7 +1,7 @@
 import Cart from "@/components/Cart/Cart";
 
 export const metadata = {
-    title: 'Cart | Tech Commerce',
+    title: 'Car | Tech Commerce',
     description: 'Showing all product added by user',
   }
 

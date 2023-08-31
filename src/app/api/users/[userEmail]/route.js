@@ -69,6 +69,8 @@ export const DELETE = async () => {
 export const GET = async (req, { params }) => {
     const { userEmail } = params;
     const query = { email: userEmail }
+    console.log("🚀 ~ file: route.js:72 ~ GET ~ userEmail:", userEmail)
     const result = await usersCollection.findOne(query)
+    console.log("🚀 ~ file: route.js:74 ~ GET ~ result:", result)
    return  NextResponse.json({result});
 }

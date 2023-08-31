@@ -28,7 +28,7 @@ export const PUT = async (req, { params }) => {
     const { email } = params;
 
     const adminUser = await usersCollection.findOne({ email: email })
-
+    console.log("🚀 ~ file: route.js:31 ~ PUT ~ adminUser:", adminUser)
     if (adminUser?.role === "admin") {
         const userRole = await req.json();
         const userEmail = req.nextUrl.searchParams.get("email");
@@ -40,7 +40,7 @@ export const PUT = async (req, { params }) => {
         }
         try {
             const result = await usersCollection.updateOne(query, updateDoc, options)
-
+            console.log("🚀 ~ file: route.js:37 ~ PUT ~ result:", result)
             return NextResponse.json(result)
         }
         catch (error) {
