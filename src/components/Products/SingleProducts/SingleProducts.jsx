@@ -2,6 +2,7 @@ import AddToCart from "@/components/AddToCart/AddToCart";
 import ProductRatings from "@/components/ProductRatings/ProductRatings";
 import { getsingleProducts } from "@/utils/getsingleProducts";
 import Image from "next/image";
+import Link from "next/link";
 
 
 const SingleProducts = async ({productId}) => {
@@ -42,10 +43,10 @@ const SingleProducts = async ({productId}) => {
                         </div>
                     </div>
                     <div className="flex flex-wrap gap-5 justify-start mb-10 items-center">
-                    <AddToCart/>
-                        {/* <Link href={`/user/dashboard/payment/${id}`}> */}
+                    <AddToCart productId={singleProducts?._id}/>
+                        <Link href={`/dashboard/checkout`}>
                             <button className="bg-primaryColor px-1 sm:px-3 sm:py-2  text-white rounded-md cursor-pointer uppercase hover:bg-[#9e7ea1]">Buy Now</button>
-                        {/* </Link> */}
+                        </Link>
                     </div>
                     <div>
                         <h3 className="font-bold text-2xl pb-2 border-b-black border-b">Details Description</h3>

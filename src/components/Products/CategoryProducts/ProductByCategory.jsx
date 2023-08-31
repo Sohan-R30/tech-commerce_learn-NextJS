@@ -5,7 +5,8 @@ import AddToCart from "@/components/AddToCart/AddToCart";
 import dynamic from "next/dynamic";
 import DifferentSort from "../DifferentSort/DifferentSort";
 
-const ProductByCategory = ({products}) => {
+const ProductByCategory = async ({products}) => {
+
     return (
         <>
         <div className="mx-auto  mt-20 mb-5">
@@ -26,7 +27,7 @@ const ProductByCategory = ({products}) => {
                         <div className="absolute bottom-14 left-3 right-3 flex items-center justify-between">
                             <ProductRatings ratings={singleProducts?.ratings}/>
                             {/* <p onClick={() => toast.warning("Not Valid User")} className="text-2xl text-primaryColor"><FaCartPlus /></p> */}
-                            <AddToCart/>
+                            <AddToCart productId={singleProducts?._id}/>
                         </div>
                         <Link href={`/products/${singleProducts?._id}`}>
                             <div className="absolute bottom-0 left-0 right-0 bg-[#008ae090] hover:bg-[#6aafd990] transition-colors text-black rounded-b-md text-center py-1 uppercase cursor-pointer font-bold">

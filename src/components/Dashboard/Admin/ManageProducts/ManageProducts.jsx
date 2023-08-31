@@ -16,7 +16,7 @@ const ManageProducts = () => {
 
 
     const handleCencel = (id) => {
-        axios.put(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/products/${users?.email}?productID=${id}`, { productState: "cencel" })
+        axios.put(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/products/${users?.email}?1=${id}`, { productState: "cencel" })
         .then((data) => {
             console.log("🚀 ~ file: ManageUsers.jsx:33 ~ .then ~ data:", data)
             if (data?.data?.modifiedCount) {
